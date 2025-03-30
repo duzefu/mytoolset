@@ -1,0 +1,10 @@
+#!/bin/bash
+
+line=$1
+file="`echo $line|awk -F':' '{print $1}'`"
+line_number="`echo $line|awk -F':' '{print $2}'`"
+if [ "$line_number" != "" ];then
+	vim $file +$line_number
+else
+	vim $file
+fi

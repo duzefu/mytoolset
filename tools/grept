@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#grep --color -nir "$@" ./*
+rg -n -i -H --no-heading "$@" ./*

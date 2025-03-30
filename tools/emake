@@ -1,0 +1,15 @@
+#!/bin/bash
+
+path="`echo $1|sed 's/\/$//g'`"
+compile="`echo $1|awk -F '/' '{print $NF}'`"
+
+if [ "$path" == "" ];then
+	echo "make -j20 V=s 2>./error || cat ./error|grep  Error"
+	make -j20 V=s 2>./error || cat ./error|grep  Error
+elif [ "$compile" == "compile" -o "$compile" == "clean" ];then
+	echo "make -j20 $path V=s 2>./error || cat ./error|grep  Error"
+	make -j20 $path V=s 2>./error || cat ./error|grep  Error
+else
+	echo "make -j20 $path/compile V=s 2>./error || cat ./error|grep  Error"
+	make -j20 $path/compile V=s 2>./error || cat ./error|grep  Error
+fi

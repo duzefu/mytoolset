@@ -1,0 +1,19 @@
+if [ -n "$1" ];then cp -rf $1 ~/dni ;exit 0;fi
+
+file_list="out/ins-ugospro-x86-64-usb-bios-squashfs-efi.img "
+for i in $file_list;do
+	if [ -f "$i" ];then cp -rf $i ~/dni;fi
+done
+
+file_list="`find bin/ -name *squashfs-sysupgrade*`"" `find bin/ -name  nand-*_generic-gl-*.img`"
+# if repo in disk 
+rep_name="`pwd|cut -d '/' -f 4`"
+if [ "$rep_name" == "disk" ];then
+	rep_name=${rep_name}"-""`pwd|cut -d '/' -f 5`"
+fi
+if [ "$file_list" != "" ];then
+	for i in $file_list;do
+		echo cp -rf $i ~/dni/$rep_name-"`echo $i|awk -F'/' '{print $NF}'`"
+		cp -rf $i ~/dni/$rep_name-"`echo $i|awk -F'/' '{print $NF}'`"
+	done
+fi
