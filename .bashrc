@@ -101,9 +101,9 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias sg='./scripts/gen_config.py keepfeeds'
 alias fn='find -name'
-export PATH=/home/minmie/tools:$PATH
-export PATH=$PATH:/usr/local/go/bin:/home/minmie/.local/bin
-export PATH=/home/minmie/go/bin:$PATH
+export PATH=$HOME/tools:$PATH
+export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin
+export PATH=$HOME/go/bin:$PATH
 export NODE_OPTIONS="--max-old-space-size=8192"
 
 # Add an "alert" alias for long running commands.  Use like so:
