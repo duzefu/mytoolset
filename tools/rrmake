@@ -1,0 +1,2 @@
+#!/bin/bash
+./build.sh kernel && rmake janus-gateway && rmake ustreamer && rmake kvmd-bin && rmake python-kvmd  &&  ./build.sh rootfs && ./build.sh updateimg
