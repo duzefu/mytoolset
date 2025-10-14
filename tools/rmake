@@ -1,1 +1,5 @@
-make $1-dirclean && make $1-rebuild
+if [ -e "./kernel-6.1" ];then
+cd buildroot && make -j10 $1-dirclean && make -j10 $1-rebuild && cd ..
+else
+make -j10 $1-dirclean && make -j10 $1-rebuild
+fi
