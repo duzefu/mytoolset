@@ -148,4 +148,6 @@ fi
 #export http_proxy=http://127.0.0.1:7890
 #export https_proxy=http://127.0.0.1:7890
 
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
