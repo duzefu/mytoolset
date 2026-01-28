@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ -e "./kernel-6.1" ];then
-./build.sh kernel && cd buildroot && rmake janus-gateway && rmake ustreamer && rmake kvmd-bin && rmake python-kvmd && cd ..  &&  ./build.sh rootfs && ./build.sh updateimg
+./build.sh kernel && cd buildroot && rmake janus-gateway && rmake ustreamer && rmake kvmd-bin && rmake python-kvmd && (rmake glweb || true) && cd ..  &&  ./build.sh rootfs && ./build.sh updateimg
 else
-./build.sh kernel && rmake janus-gateway && rmake ustreamer && rmake kvmd-bin && rmake python-kvmd  &&  ./build.sh rootfs && ./build.sh updateimg
+./build.sh kernel && rmake janus-gateway && rmake ustreamer && rmake kvmd-bin && rmake python-kvmd && (rmake glweb || true) &&  ./build.sh rootfs && ./build.sh updateimg
 fi
