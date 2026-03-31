@@ -10,6 +10,6 @@ alias gst='python3 setup.py -c'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias sg='./scripts/gen_config.py keepfeeds'
-alias fn='fdfind --glob'
 alias cc="claude --dangerously-skip-permissions"
+alias fn='fdfind --glob --no-ignore'
 export PATH=$HOME/tools:$PATH
