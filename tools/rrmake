@@ -1,6 +1,8 @@
 #!/bin/bash
 if [ -e "./kernel-6.1" ];then
 ./build.sh kernel && cd buildroot && (rmake gl-pion || true ) && rmake ustreamer && rmake kvmd-bin && rmake python-kvmd && (rmake glweb || true) && (rmake remote-uvc || true) && cd ..  &&  ./build.sh rootfs && ./build.sh updateimg
+elif [ -e "./riscv" ];then
+(rmake gl-pion || true) && rmake ustreamer && rmake kvmd-bin && rmake python-kvmd && (rmake glweb || true) && rpack
 else
 	./build.sh kernel && (rmake gl-pion || true) && rmake ustreamer && rmake kvmd-bin && rmake python-kvmd && (rmake glweb || true) &&  ./build.sh rootfs && ./build.sh updateimg
 fi
