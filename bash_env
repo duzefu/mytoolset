@@ -15,5 +15,6 @@ alias ccg="claude --dangerously-skip-permissions --settings ~/cc-config/gpt.json
 alias cco="claude --dangerously-skip-permissions --settings ~/cc-config/opencode.json"
 alias cca="claude --dangerously-skip-permissions --settings ~/cc-config/ali.json"
 alias ccd="claude --dangerously-skip-permissions --settings ~/cc-config/deepseek.json"
+alias ccm="claude --dangerously-skip-permissions --settings ~/cc-config/mino.json"
 alias fn='fdfind --glob --no-ignore'
 export PATH=$HOME/tools:$PATH
